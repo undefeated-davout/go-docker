@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+#     build: .
+    image: teruzoufox/go-docker
+    container_name: go-docker.app
+    ports:
+      - 9000:9000
+      - 2345:2345
+    volumes:
+      - ./code:/opt/go_lang/go/src/code
+    tty: true
+    privileged: true
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_PTRACE
