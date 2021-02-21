@@ -1,24 +1,29 @@
 # 使い方
+
 ## Dockerコマンド
-#### 以下、cloneしたディレクトリ直下にてコマンド実行
+
+### 以下、cloneしたディレクトリ直下にてコマンド実行
 
 ```$xslt
-$ docker-compose build
+docker-compose build
 ```
 
 #### 実行
 
 ```$xslt
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 #### コンテナ内へログイン
 
 ```$xslt
-$ docker exec -it go-docker.app /bin/bash
+docker exec -it go-docker.app /bin/bash --login
 ```
 
+### 設定
+
 #### launch.json
+
 ```$xslt
 {
     "version": "0.2.0",
@@ -35,6 +40,7 @@ $ docker exec -it go-docker.app /bin/bash
 ```
 
 #### settings.json
+
 ```$xslt
 {
     "remote.extensionKind": {
@@ -54,7 +60,7 @@ $ docker exec -it go-docker.app /bin/bash
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "package",
     "go.lintFlags": [
-        "--disable-all", 
+        "--disable-all",
         "--enable=errcheck",
         "--config=${workspaceFolder}/.golangci.yml",
     ],

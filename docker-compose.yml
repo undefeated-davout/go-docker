@@ -1,8 +1,8 @@
-version: '3'
+version: "3.8"
 services:
   app:
-#     build: .
-    image: teruzoufox/go-docker
+    # build: .
+    image: undefeateddavout/go-docker
     container_name: go-docker.app
     ports:
       - 9000:9000
