@@ -48,6 +48,13 @@ RUN systemctl enable nginx
 
 RUN mkdir /var/log/code
 
+# AWS CLI
+RUN dnf install -y wget python3
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python3 get-pip.py
+RUN pip install awscli
+ENV PATH $PATH:/root/.local/bin
+
 # work directory
 WORKDIR /opt/go_lang/go/src
 
