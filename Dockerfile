@@ -20,7 +20,7 @@ RUN yum update -y \
     && yum clean all
 
 # alias
-RUN echo "alias ll='ls -laFh'" >> ~/.bashrc
+RUN echo "alias ll='ls -lahF --color=auto'" >> ~/.bashrc
 
 # go install
 WORKDIR /opt/go_lang/
